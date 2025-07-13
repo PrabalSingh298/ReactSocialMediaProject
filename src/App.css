@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.myHeader {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+.mainBody {
+    background-color: #a1a4a7;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.mainPageContainer {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.myFooter {
+    background-color: rgb(145, 145, 150);
+    padding: 24px;
+}
