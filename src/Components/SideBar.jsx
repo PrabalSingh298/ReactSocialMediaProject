@@ -1,4 +1,4 @@
-const SocialSideBar = () => {
+const SocialSideBar = (props) => {
     return (<div className="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style={{ minHeight: '800px' }}>
         <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <i className="fas fa-gem me-2 fa-2x"></i>
@@ -8,14 +8,14 @@ const SocialSideBar = () => {
         <hr />
 
         <ul className="nav nav-pills flex-column mb-auto">
-            <li className="nav-item">
-                <a href="#" className="nav-link active" aria-current="page">
+            <li className="nav-item" onClick={() => { props.setSelectedTab("Home") }}>
+                <a href="#" className={`nav-link ${props.selectedTab === "Home" ? "active" : "link-body-emphasis"}`} >
                     <i className="fas fa-home me-2"></i>
                     Home
                 </a>
             </li>
-            <li>
-                <a href="#" className="nav-link link-body-emphasis">
+            <li className="nav-item" onClick={() => { props.setSelectedTab("Create Posts") }}>
+                <a href="#" className={`nav-link ${props.selectedTab === "Create Posts" ? "active" : "link-body-emphasis"}`}>
                     <i className="fas fa-tachometer-alt me-2"></i>
                     Create Posts
                 </a>
