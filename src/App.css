@@ -13,8 +13,9 @@
 .mainBody {
     background-color: #a1a4a7;
     width: 100%;
-    padding: 10px;
+    padding: 0px 10px;
 }
+
 
 
 .mainPageContainer {
@@ -26,4 +27,22 @@
 .myFooter {
     background-color: rgb(145, 145, 150);
     padding: 24px;
+}
+
+.postContent {
+    text-align: justify;
+    margin: 0
+}
+
+.myCard {
+    max-width: 21rem;
+    margin: 8px 8px;
+}
+
+.myTag {
+    margin: 4px
+}
+
+.PostContainer {
+    display: flex;
 }

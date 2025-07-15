@@ -1,7 +1,13 @@
 import { createContext, useReducer } from "react";
 
 
-const postListReducer = () => { }
+const postListReducer = (currVal, action) => {
+    let newPostList = currVal;
+    if (action.type === "DELETE_POST") {
+        newPostList = currVal.filter(item => item.id !== action.post)
+    }
+    return newPostList;
+}
 
 
 export const postListContext = createContext({
@@ -35,14 +41,23 @@ const default_PostList = [
 
 
 
+
 const PostListContextProvider = (props) => {
 
     const [postListRed, dispatchPostList] = useReducer(postListReducer, default_PostList)
 
+    const DeletePost = (postId) => {
+        const deleteAction = {
+            type: "DELETE_POST",
+            post: postId
+        }
+        dispatchPostList(deleteAction)
+    }
+
     return <postListContext.Provider value={{
         postlist: postListRed,
         addPost: () => { },
-        deletePost: () => { },
+        deletePost: DeletePost,
     }}>
         {props.children}
     </postListContext.Provider>

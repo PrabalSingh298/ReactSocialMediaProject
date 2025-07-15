@@ -7,10 +7,10 @@ const SocialMediaPostCard = () => {
     const postList = useContext(postListContext);
     const postListArray = postList.postlist;
 
-    return (
-        postListArray.map((item) => (<Post postObject={item} key={item.id}>
-        </Post>))
-
+    return (<div className="PostContainer">
+        {postListArray.map((item) => (<Post postObject={item} key={item.id}>
+        </Post>))}
+    </div>
     );
 }
 
