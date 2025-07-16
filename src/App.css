@@ -45,4 +45,11 @@
 
 .PostContainer {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.myForm {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 40px;
 }
