@@ -53,3 +53,12 @@
     margin-left: 10%;
     margin-top: 40px;
 }
+
+.welcome_message {
+    margin: auto;
+}
+
+.welcome_message {
+    width: 50%;
+    margin: 5% auto;
+}
