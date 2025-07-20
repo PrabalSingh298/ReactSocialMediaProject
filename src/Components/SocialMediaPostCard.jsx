@@ -7,7 +7,16 @@ const SocialMediaPostCard = () => {
 
     const postList = useContext(postListContext);
     const postListArray = postList.postlist;
-    const handleFetchPost = postList.fetchPost;
+    const handleFetchPost = () => {
+        fetch('https://dummyjson.com/posts')
+            .then(res => res.json())
+            .then(jsonObject => postList.fetchPost(
+                jsonObject.posts));
+
+    }
+
+
+
 
     return (<div className="PostContainer">
 

@@ -27,6 +27,7 @@ const PostListContextProvider = (props) => {
 
     const [postListRed, dispatchPostList] = useReducer(postListReducer, [])
 
+
     const AddPost = (title, body, hashtags, likeReactions, userId) => {
         // console.log(`${title} ${body} ${hashtags} ${likeReactions} ${userId}`)
         const addAction = {
@@ -51,17 +52,15 @@ const PostListContextProvider = (props) => {
         dispatchPostList(deleteAction)
     }
 
-    const fetchInitialPost = () => {
-        const serverPost = fetch('https://dummyjson.com/posts')
-            .then(res => res.json())
-            .then(jsonObject => {
-                const fetchAction = {
-                    type: "FETCH_SERVER_POST",
-                    post: jsonObject.posts
-                }
-                dispatchPostList(fetchAction)
-            }
-            )
+    const fetchInitialPost = (posts) => {
+
+        const fetchAction = {
+            type: "FETCH_SERVER_POST",
+            post: posts
+        }
+        dispatchPostList(fetchAction)
+
+
 
 
     }

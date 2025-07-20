@@ -19,6 +19,7 @@ function App() {
         <div className="mainPageContainer">
           <SocialSideBar selectedTab={selectedTab} setSelectedTab={setSelectedTab}></SocialSideBar>
           <div className="mainBody">
+
             {selectedTab === "Home" ? <SocialMediaPostCard></SocialMediaPostCard> : <CreatePostForm></CreatePostForm>}
           </div>
         </div>
