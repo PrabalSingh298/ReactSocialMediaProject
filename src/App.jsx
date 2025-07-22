@@ -10,7 +10,8 @@ import PostListContextProvider from './Store/HomeContext'
 
 function App() {
 
-  const [selectedTab, setSelectedTab] = useState("Create Posts")
+  const [selectedTab, setSelectedTab] = useState("Home")
+
 
   return (
     <>
