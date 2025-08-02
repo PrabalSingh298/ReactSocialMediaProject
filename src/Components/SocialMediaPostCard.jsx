@@ -13,15 +13,22 @@ const SocialMediaPostCard = () => {
 
 
     useEffect(() => {
+        const controller = new AbortController;
+        const signal = controller.signal
         setFetching(true);
-        fetch('https://dummyjson.com/posts')
+        fetch('https://dummyjson.com/posts', { signal })
             .then(res => res.json())
             .then(jsonObject => {
                 postList.fetchPost(
                     jsonObject.posts)
                 setFetching(false)
             }
-            )
+            );
+        return () => {
+            console.log("Cleanup of Fetching Started and called.")
+            controller.abort();
+        }
+
     },
         [])
 
